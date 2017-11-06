@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         OkrCalculator
 // @namespace    https://github.com/ggkk0818/TampermonkeyScript
-// @version      1.0
+// @version      1.1
+// @updateURL    https://github.com/ggkk0818/TampermonkeyScript/raw/master/OkrCalculator.user.js
 // @description  OkrCalculator
 // @author       You
 // @match        http://192.168.200.181:8080/okr/*
 // @grant        none
-// @require    http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js
+// @require      http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js
 // ==/UserScript==
 
 (function() {
@@ -19,9 +20,9 @@
         krScore,
         CLASS_DISABLED = "btn--disabled";
     var attachElement = function(){
-        if(window.location.href.indexOf("http://192.168.200.181:8080/okr/?") === -1)
+        if(window.location.href.indexOf("http://192.168.200.181:8080/okr/?") === -1 || $(".btn--calc").length)
             return;
-        var btnHtml = '<button type="button" class="btn btn--dark btn--outline btn--raised primary--text" style="margin: 0px 0px 0px 10px;"><span class="btn__content">计算个人得分</span></button>',
+        var btnHtml = '<button type="button" class="btn btn--dark btn--outline btn--raised primary--text btn--calc" style="margin: 0px 0px 0px 10px;"><span class="btn__content">计算个人得分</span></button>',
             scoreHtml = '<span class="item-score-preview" style="line-height: 36px;">0</span>';
         $btn = $(btnHtml);
         $score = $(scoreHtml).hide();
@@ -87,5 +88,10 @@
             }
         });
     };
-    setTimeout(attachElement, 1000);
+    setTimeout(function(){
+      attachElement();
+      window.addEventListener("popstate", function() {
+          attachElement();
+      });
+    }, 1000);
 })();
