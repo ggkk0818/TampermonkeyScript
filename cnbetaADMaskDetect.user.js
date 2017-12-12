@@ -12,13 +12,15 @@
     'use strict';
 
     (function clearMask(){
-        var timer = null;
+        var timer = null,
+            lastRemoveTime = null;
         var tick = function(){
             var $div = $('div[style]').filter(function(){ return $(this).attr('style').indexOf('display:block !important') > -1; });
             if($div.length){
                 $div.remove();
+                lastRemoveTime = new Date().getTime();
             }
-            else{
+            if(new Date().getTime() - lastRemoveTime < 5000){
                 timer = setTimeout(tick, 20);
             }
             //$('.body').parent().removeAttr('style');
