@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name cnbetaADMaskDetect
 // @namespace http://tampermonkey.net/
-// @version 0.1
+// @version 0.2
 // @description remove cnbeta dialog
 // @author You
 // @match http://*.cnbeta.com/articles/*
