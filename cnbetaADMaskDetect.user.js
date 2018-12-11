@@ -1,11 +1,12 @@
 // ==UserScript==
-// @name cnbetaADMaskDetect
-// @namespace http://tampermonkey.net/
-// @version 0.2
-// @description remove cnbeta dialog
-// @author You
-// @match http://*.cnbeta.com/articles/*
-// @grant none
+// @name         cnbetaADMaskDetect
+// @namespace    http://tampermonkey.net/
+// @version      0.3
+// @updateURL    https://github.com/ggkk0818/TampermonkeyScript/raw/master/cnbetaADMaskDetect.user.js
+// @description  remove cnbeta dialog
+// @author       You
+// @match        http://*.cnbeta.com/articles/*
+// @grant        none
 // ==/UserScript==
 
 (function() {
