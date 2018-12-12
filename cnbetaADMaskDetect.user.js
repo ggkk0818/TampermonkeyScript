@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         cnbetaADMaskDetect
 // @namespace    https://github.com/ggkk0818/TampermonkeyScript
-// @version      0.4
+// @version      0.5
 // @updateURL    https://github.com/ggkk0818/TampermonkeyScript/raw/master/cnbetaADMaskDetect.user.js
 // @description  remove cnbeta dialog
 // @author       You
 // @match        http://*.cnbeta.com/articles/*
+// @match        https://*.cnbeta.com/articles/*
 // @grant        none
 // ==/UserScript==
 
