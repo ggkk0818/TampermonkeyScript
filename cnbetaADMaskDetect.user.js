@@ -7,6 +7,7 @@
 // @author       You
 // @match        http://*.cnbeta.com/articles/*
 // @match        https://*.cnbeta.com/articles/*
+// @match        https://*.cnbeta.com/comment/*
 // @grant        none
 // ==/UserScript==
 
